@@ -1,0 +1,19 @@
+{
+  "name": "csc-437-photographysite",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdgarJGarcia/CSC-437-PhotographySite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdgarJGarcia/CSC-437-PhotographySite/issues"
+  },
+  "homepage": "https://github.com/EdgarJGarcia/CSC-437-PhotographySite#readme",
+  "description": ""
+}
