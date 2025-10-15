@@ -1,0 +1,13 @@
+body {
+    background-color: var(--color-background-page);
+    color: var(--color-text);
+}
+
+header {
+    background-color: var(--color-background-header);
+    color: var(--color-text-inverted);
+}
+
+a {
+    color: var(--color-link);
+}
