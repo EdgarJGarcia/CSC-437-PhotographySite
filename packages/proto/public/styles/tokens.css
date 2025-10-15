@@ -5,4 +5,15 @@
   --color-text-inverted: #ffffff;
   --color-accent: #3498db;
   --color-link: #3498db;
+  
+  --font-family-body: "Lato", Arial, sans-serif;
+  --font-family-display: "Playfair Display", Georgia, serif;
+  
+  --font-size-body: 16px;
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
+  
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
 }

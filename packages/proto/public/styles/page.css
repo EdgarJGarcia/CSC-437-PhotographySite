@@ -1,6 +1,9 @@
 body {
     background-color: var(--color-background-page);
     color: var(--color-text);
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-normal);
 }
 
 header {
@@ -8,6 +11,36 @@ header {
     color: var(--color-text-inverted);
 }
 
+h1, h2, h3 {
+    font-family: var(--font-family-display);
+    color: var(--color-accent);
+}
+
+h1 {
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-bold);
+}
+
+h2 {
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+}
+
+header h1 {
+    color: var(--color-text-inverted);
+}
+
 a {
     color: var(--color-link);
+}
+
+svg.icon {
+  display: inline;
+  height: 2em;
+  width: 2em;
+  vertical-align: top;
+  fill: currentColor;
 }
