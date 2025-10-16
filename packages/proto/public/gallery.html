@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Gallery</title>
+    <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -14,27 +15,43 @@
     <header>
         <h1>Portfolio Gallery</h1>
         <nav>
-            <a href="index.html">Home</a> | 
-            <a href="service.html">Services</a> | 
+            <a href="index.html">Home</a>
+            <a href="service.html">Services</a>
             <a href="booking.html">Book a Shoot</a>
         </nav>
     </header>
 
     <main>
         <h2>
-	    <svg class="icon">
-		<use href="/icons/photography.svg#icon-album" />
-	    </svg>
-	    Example Work
-	</h2>
+            <svg class="icon">
+                <use href="/icons/photography.svg#icon-album" />
+            </svg>
+            Example Work
+        </h2>
         <p>Browse my best photography from recent shoots</p>
         
         <h3>Featured Photos</h3>
-        <ul>
-            <li><a href="photo.html">Golden Hour Portrait</a> - <img src="images/DSC_0213-2.jpg" alt="Golden hour portrait" width="200"></li>
-            <li><a href="photo.html">Sunset Portrait</a> - <img src="images/DSC_0237.jpg" alt="Sunset portrait" width="200"></li>
-            <li><a href="photo.html">Beach Portrait</a> - <img src="images/DSC_0851.jpg" alt="Beach portrait" width="200"></li>
-            <li><a href="photo.html">Downtown Portrait</a> - <img src="images/DSC_0164.jpg" alt="Downtown portrait" width="200"></li>
+        <ul class="photo-grid">
+            <li>
+                <a href="photo.html">
+                    <img src="images/DSC_0213-2.jpg" alt="Golden hour portrait">
+                </a>
+            </li>
+            <li>
+                <a href="photo.html">
+                    <img src="images/DSC_0237.jpg" alt="Sunset portrait">
+                </a>
+            </li>
+            <li>
+                <a href="photo.html">
+                    <img src="images/DSC_0851.jpg" alt="Beach portrait">
+                </a>
+            </li>
+            <li>
+                <a href="photo.html">
+                    <img src="images/DSC_0164.jpg" alt="Downtown portrait">
+                </a>
+            </li>
         </ul>
     </main>
 </body>
