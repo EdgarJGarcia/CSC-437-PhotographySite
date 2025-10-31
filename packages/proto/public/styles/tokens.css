@@ -23,3 +23,12 @@
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
 }
+
+body.dark-mode {
+  --color-background-page: #1a1a1a;
+  --color-background-header: #0d1117;
+  --color-text: #e6e6e6;
+  --color-text-inverted: #1a1a1a;
+  --color-accent: #58a6ff;
+  --color-link: #58a6ff;
+}
