@@ -44,7 +44,7 @@
                 detail: detail 
             });
             event.currentTarget.dispatchEvent(customEvent);
-            event.stopPropagation(); // Stop the change event from bubbling
+            event.stopPropagation();
         }
 
         document.body.addEventListener('darkmode:toggle', (event) => {

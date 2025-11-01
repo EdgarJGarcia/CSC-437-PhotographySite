@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Portfolio - Home</title>
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+  <script type="module" crossorigin src="/assets/index-DgEHrDtS.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Photography Portfolio</h1>
+        <nav>
+            <a href="gallery.html">Gallery</a>
+            <a href="service.html">Services</a>
+            <a href="booking.html">Book a Shoot</a>
+        </nav>
+        <label onchange="relayEvent(event, 'darkmode:toggle', { checked: event.target.checked })">
+            <input type="checkbox" autocomplete="off" />
+            Dark mode
+        </label>
+    </header>
+
+    <main>
+        <h2>
+            <svg class="icon">
+                <use href="/icons/photography.svg#icon-lens" />
+            </svg>
+            Recent Shoots
+        </h2>
+        <ul>
+            <li><a href="shoot.html">Shoot 1</a></li>
+        </ul>
+
+        <h3>Featured Photos</h3>
+        <ul class="photo-grid">
+            <photo-card 
+                src="/images/DSC_0213-2.jpg" 
+                alt="Golden hour portrait"
+                href="/photo.html">
+            </photo-card>
+            <photo-card 
+                src="/images/DSC_0237.jpg" 
+                alt="Sunset portrait"
+                href="/photo.html">
+            </photo-card>
+        </ul>
+    </main>
+
+    <script>
+        function relayEvent(event, eventType, detail) {
+            const customEvent = new CustomEvent(eventType, { 
+                bubbles: true, 
+                detail: detail 
+            });
+            event.currentTarget.dispatchEvent(customEvent);
+            event.stopPropagation();
+        }
+
+        document.body.addEventListener('darkmode:toggle', (event) => {
+            if (event.detail.checked) {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        });
+    </script>
+
+</body>
+</html>
