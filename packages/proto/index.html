@@ -37,18 +37,7 @@
         </ul>
 
         <h3>Featured Photos</h3>
-        <ul class="photo-grid">
-            <photo-card 
-                src="/images/DSC_0213-2.jpg" 
-                alt="Golden hour portrait"
-                href="/photo.html">
-            </photo-card>
-            <photo-card 
-                src="/images/DSC_0237.jpg" 
-                alt="Sunset portrait"
-                href="/photo.html">
-            </photo-card>
-        </ul>
+        <photo-gallery src="/data/photos.json"></photo-gallery>
     </main>
 
     <script>
@@ -73,9 +62,11 @@
     <script type="module">
         import { define } from "@calpoly/mustang";
         import { PhotoCardElement } from "/src/photo-card.js";
+        import { PhotoGalleryElement } from "/src/photo-gallery.js";
 
         define({
-            "photo-card": PhotoCardElement
+            "photo-card": PhotoCardElement,
+            "photo-gallery": PhotoGalleryElement
         });
     </script>
 </body>
