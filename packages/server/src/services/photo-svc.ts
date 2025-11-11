@@ -16,12 +16,32 @@ function index(): Promise<Photo[]> {
   return PhotoModel.find();
 }
 
-function get(id: string): Promise<Photo> {
-  return PhotoModel.findById(id)
+function get(photoId: string): Promise<Photo> {
+  return PhotoModel.findOne({ src: photoId })
     .then((photo) => {
-      if (!photo) throw `${id} Not Found`;
+      if (!photo) throw `${photoId} Not Found`;
       return photo;
     });
 }
 
-export default { index, get };
+function create(json: Photo): Promise<Photo> {
+  const p = new PhotoModel(json);
+  return p.save();
+}
+
+function update(photoId: string, photo: Photo): Promise<Photo> {
+  return PhotoModel.findOneAndUpdate({ src: photoId }, photo, {
+    new: true
+  }).then((updated) => {
+    if (!updated) throw `${photoId} not updated`;
+    return updated as Photo;
+  });
+}
+
+function remove(photoId: string): Promise<void> {
+  return PhotoModel.findOneAndDelete({ src: photoId }).then((deleted) => {
+    if (!deleted) throw `${photoId} not deleted`;
+  });
+}
+
+export default { index, get, create, update, remove };
