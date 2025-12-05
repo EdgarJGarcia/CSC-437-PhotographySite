@@ -2,9 +2,13 @@ import {
   Auth,
   define,
   History,
-  Switch
+  Switch,
+  Store
 } from "@calpoly/mustang";
 import { html } from "lit";
+import { Msg } from "./messages";
+import { Model, init } from "./model";
+import update from "./update";
 import { HeaderElement } from "./components/photography-header";
 import { HomeViewElement } from "./views/home-view";
 import { GalleryViewElement } from "./views/gallery-view";
@@ -66,6 +70,11 @@ const routes = [
 define({
   "mu-auth": Auth.Provider,
   "mu-history": History.Provider,
+  "mu-store": class AppStore extends Store.Provider<Model, Msg> {
+    constructor() {
+      super(update, init, "photography:auth");
+    }
+  },
   "photography-header": HeaderElement,
   "home-view": HomeViewElement,
   "gallery-view": GalleryViewElement,

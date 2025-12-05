@@ -15,7 +15,7 @@ app.use(express.static(staticDir));
 app.use(express.json());
 
 app.use("/auth", auth);
-app.use("/api/photos", authenticateUser, photosRouter);
+app.use("/api/photos", photosRouter);
 
 app.get("/hello", (req: Request, res: Response) => {
     res.send("Hello, World");

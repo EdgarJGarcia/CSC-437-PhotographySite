@@ -11,7 +11,8 @@
     "check": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:api": "cross-env STATIC=./public npm run start",
-    "start:app": "cross-env STATIC=../app/dist npm run start"
+    "start:app": "cross-env STATIC=../app/dist npm run start",
+    "seed": "npx etsc && node dist/seed-photos.js"
   },
   "author": "",
   "license": "ISC",
@@ -33,5 +34,10 @@
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.19.3"
+  },
+  "exports": {
+    "models": {
+      "import": "./src/models/index.ts"
+    }
   }
 }

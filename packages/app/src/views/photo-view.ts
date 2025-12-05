@@ -1,21 +1,46 @@
-import { css, html, LitElement } from "lit";
-import { property } from "lit/decorators.js";
+import { View } from "@calpoly/mustang";
+import { css, html } from "lit";
+import { property, state } from "lit/decorators.js";
+import { Photo } from "../model";
+import { Msg } from "../messages";
+import { Model } from "../model";
 
-export class PhotoViewElement extends LitElement {
+export class PhotoViewElement extends View<Model, Msg> {
   @property({ attribute: "photo-id" })
   photoId?: string;
 
-  render() {
-    const photos: Record<string, any> = {
-      "1": { src: "/images/DSC_0213-2.jpg", caption: "Caption 1", date: "Sept 2025" },
-      "2": { src: "/images/DSC_0352.jpg", caption: "Caption 2", date: "Sept 2025" },
-      "3": { src: "/images/DSC_0353.jpg", caption: "Caption 3", date: "Sept 2025" }
-    };
+  @state()
+  get photo(): Photo | undefined {
+    return this.model.photo;
+  }
 
-    const photo = this.photoId ? photos[this.photoId] : null;
+  constructor() {
+    super("photography:model");
+  }
+
+  attributeChangedCallback(
+    name: string,
+    oldValue: string,
+    newValue: string
+  ) {
+    super.attributeChangedCallback(name, oldValue, newValue);
+    if (
+      name === "photo-id" &&
+      oldValue !== newValue &&
+      newValue
+    ) {
+      this.dispatchMessage([
+        "photo/request",
+        { photoId: newValue }
+      ]);
+    }
+  }
+
+  render() {
+    const photo = this.photo;
 
     if (!photo) {
-      return html`<p>Photo not found</p>`;
+      return html`<p>Loading photo...</p>`;
     }
 
     return html`
@@ -24,12 +49,12 @@ export class PhotoViewElement extends LitElement {
           <a href="/app/gallery">← Back to Gallery</a>
         </nav>
         
-        <h1>${photo.caption}</h1>
-        <img src="${photo.src}" alt="${photo.caption}">
+        <h1>${photo.alt}</h1>
+        <img src="${photo.src}" alt="${photo.alt}">
         
         <dl>
-          <dt>Date:</dt>
-          <dd>${photo.date}</dd>
+          <dt>Photo ID:</dt>
+          <dd>${this.photoId}</dd>
           
           <dt>Location:</dt>
           <dd>San Luis Obispo, CA</dd>

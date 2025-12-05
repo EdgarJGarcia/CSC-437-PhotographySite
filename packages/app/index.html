@@ -11,10 +11,12 @@
 <body>
   <mu-history provides="photography:history">
     <mu-auth provides="photography:auth" redirect="/login.html">
-      <article class="page">
-        <photography-header></photography-header>
-        <mu-switch></mu-switch>
-      </article>
+      <mu-store provides="photography:model">
+        <article class="page">
+          <photography-header></photography-header>
+          <mu-switch></mu-switch>
+        </article>
+      </mu-store>
     </mu-auth>
   </mu-history>
   
