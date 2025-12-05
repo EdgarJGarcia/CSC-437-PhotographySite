@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography Portfolio</title>
+  <link rel="stylesheet" href="/styles/reset.css">
+  <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="stylesheet" href="/styles/page.css">
+  <script type="module" crossorigin src="/assets/index-CDfvk1dn.js"></script>
+</head>
+<body>
+  <mu-history provides="photography:history">
+    <mu-auth provides="photography:auth" redirect="/login.html">
+      <article class="page">
+        <photography-header></photography-header>
+        <mu-switch></mu-switch>
+      </article>
+    </mu-auth>
+  </mu-history>
+  
+</body>
+</html>
